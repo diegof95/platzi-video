@@ -4,4 +4,4 @@ import Media from './src/media';
 
 const app = document.getElementById('app');
 
-render(<Media/>, app);
+render(<Media type="audio" title="Post" author="Bj&ouml;rk" />, app);
