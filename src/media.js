@@ -23,7 +23,7 @@ class Media extends Component {
     return( //JSX
         <div className="Media" onClick={this.handleClick}>
           <div className="Media-cover">
-            <img className="Media-image" src="./imgs/bjorkPost.jpg"
+            <img className="Media-image" src={this.props.cover}
               alt="Bj&ouml;rk Post"
               width={260} height={160}
             />
@@ -37,7 +37,7 @@ class Media extends Component {
 
   Media.propTypes = {
     type: PropTypes.oneOf(['audio', 'video']),
-    //image: PropTypes.string,
+    image: PropTypes.string,
     title: PropTypes.string.isRequired,
     author: PropTypes.string,
   }
