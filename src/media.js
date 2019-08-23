@@ -5,11 +5,16 @@ import './css/media.css';
 
 class Media extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      author: props.author,
-    }
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     author: props.author,
+  //   }
+  // }
+
+  //EMCS7
+  state = {
+    author: this.props.author,
   }
 
   // Asignamos funcion arrow para heredar env de la class

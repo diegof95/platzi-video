@@ -38,10 +38,10 @@
           "id": 4
         },
         {
-          "title": "Lo mejor de Mejorando.la",
-          "author": "Cvander",
+          "title": "Enjoy - Post",
+          "author": "Björk",
           "type": "video",
-          "cover": "./images/covers/mejorandola.jpg",
+          "cover": "./images/covers/bjorkPost.jpg",
           "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
           "id": 5
         }
