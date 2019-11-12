@@ -12,7 +12,7 @@ class Media extends Component {
   //   }
   // }
 
-  //EMCS7
+  //ECMAScript7
   state = {
     author: this.props.author,
   }
@@ -20,7 +20,7 @@ class Media extends Component {
   // Asignamos funcion arrow para heredar env de la class
   handleClick = (event) => {
     this.setState({
-      author: "Diego",
+      author: "Cambiaste el estado c:",
     });
   }
 
@@ -29,7 +29,7 @@ class Media extends Component {
         <div className="Media" onClick={this.handleClick}>
           <div className="Media-cover">
             <img className="Media-image" src={this.props.cover}
-              alt="Bj&ouml;rk Post"
+              alt={this.props.title}
               width={260} height={160}
             />
             <h3 className="Media-title">{this.props.title}</h3>
