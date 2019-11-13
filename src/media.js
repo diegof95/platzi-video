@@ -38,13 +38,13 @@ class Media extends Component {
         </div>
       )
     }
-  }
+}
 
-  Media.propTypes = {
-    type: PropTypes.oneOf(['audio', 'video']),
-    image: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string,
-  }
+Media.propTypes = {
+  type: PropTypes.oneOf(['audio', 'video']),
+  image: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string,
+}
 
-  export default Media;
+export default Media;

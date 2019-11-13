@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 import Playlist from './playlist';
 import './css/feed.css';
 
-class Feed extends Component {
+function Feed(props) {
 
-  render(){
-
-    const categories = this.props.data.categories;
+    const categories = props.data.categories;
 
     return(
       <div className="Feed">
@@ -25,7 +23,6 @@ class Feed extends Component {
       }
       </div>
     )
-  }
 }
 
-  export default Feed;
+export default Feed;

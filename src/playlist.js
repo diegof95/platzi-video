@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 import Media from './media';
 import './css/playlist.css';
 
-class Playlist extends Component {
+function Playlist(props) {
 
-  render(){
-
-    const title = this.props.title;
-    const description = this.props.description;
-    const playlist = this.props.playlist;
+    const title = props.title;
+    const description = props.description;
+    const playlist = props.playlist;
 
     return(
 
@@ -32,7 +30,6 @@ class Playlist extends Component {
         </div>
       </div>
     )
-  }
 }
 
-  export default Playlist;
+export default Playlist;
