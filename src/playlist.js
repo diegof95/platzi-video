@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Media from './media';
 import './css/playlist.css';
+import Play from './icons/play';
 
 function Playlist(props) {
 
@@ -15,6 +16,7 @@ function Playlist(props) {
       <div className="Category">
         <p className="Category-description">{description}</p>
         <h2 className="Category-title">{title}</h2>
+        <Play size={25} color="blue" />
         <div className="Playlist">
         {
           playlist.map(
