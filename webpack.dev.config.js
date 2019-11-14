@@ -7,7 +7,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'platzi-video': path.resolve(__dirname, 'index.js'),
+    'home': path.resolve(__dirname, 'src/entry-points/home.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

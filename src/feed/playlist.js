@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Media from './media';
-import './css/playlist.css';
-import FullScreen from './icons/full-screen';
+import './playlist.css';
 
 function Playlist(props) {
 
@@ -16,7 +15,6 @@ function Playlist(props) {
       <div className="Category">
         <p className="Category-description">{description}</p>
         <h2 className="Category-title">{title}</h2>
-        <FullScreen size={25} color="blue" />
         <div className="Playlist">
         {
           playlist.map(

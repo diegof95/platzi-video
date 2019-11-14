@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Feed from './src/feed';
+import Home from '../pages/home';
 
-import data from './src/api.json';
+import data from '../api.json';
 
 const app = document.getElementById('app');
 
-render(<Feed data={data} />, app);
+render(<Home data={data} />, app);
