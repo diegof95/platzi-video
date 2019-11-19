@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Home from '../pages/home';
+import Home from '../pages/control/home';
 
 import data from '../api.json';
 
-const app = document.getElementById('app');
+const home = document.getElementById('home');
 
-render(<Home data={data} />, app);
+render(<Home data={data} />, home);
