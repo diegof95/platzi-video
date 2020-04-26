@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Playlist from './playlist';
+import Search from '../../widgets/control/search';
 import './feed.css';
 
 function Feed(props) {
@@ -10,6 +11,7 @@ function Feed(props) {
 
     return(
       <div className="Feed">
+        <Search />
       {
         categories.map(
           (item) => {

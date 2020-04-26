@@ -28,7 +28,7 @@ class Home extends Component {
       <HandleError>
         <HomeLayout>
           <RelatedLayout />
-          <Feed data={this.props.datas} handleClickMedia={this.handleClickMedia} />
+          <Feed data={this.props.data} handleClickMedia={this.handleClickMedia} />
           {
             this.state.modalOn && // Evaluación cortocircuito
             <Modal>
