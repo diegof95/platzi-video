@@ -19,9 +19,11 @@ function Playlist(props) {
         {
           playlist.map(
             (item) => {
-              return( <Media
+              return(
+                <Media
                   {...item}
                   key={item.id}
+                  handleClick={props.handleClickMedia}
                 />
               )
             }

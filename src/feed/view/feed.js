@@ -13,9 +13,11 @@ function Feed(props) {
       {
         categories.map(
           (item) => {
-            return( <Playlist
+            return(
+              <Playlist
                 {...item}
                 key={item.id}
+                handleClickMedia={props.handleClickMedia}
               />
             )
           }
