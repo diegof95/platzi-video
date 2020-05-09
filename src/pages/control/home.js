@@ -5,6 +5,7 @@ import RelatedLayout from '../../related/view/related-layout';
 import Modal from '../../widgets/control/modal';
 import ModalLayout from '../../widgets/view/modal-layout';
 import HandleError from '../../error-handling/control/error-handler';
+import VideoPlayer from '../../video-player/control/video-player';
 
 class Home extends Component {
 
@@ -33,7 +34,7 @@ class Home extends Component {
             this.state.modalOn && // Evaluación cortocircuito
             <Modal>
               <ModalLayout handleClose={this.handleCloseModal}>
-                <h1>Modal</h1>
+                <VideoPlayer />
               </ModalLayout>
             </Modal>
           }

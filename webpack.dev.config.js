@@ -18,6 +18,8 @@ module.exports = {
   devServer: {
   //   // contentBase: path.join(__dirname, "dist"),
   //   // compress: true,
+    host: '0.0.0.0',
+    disableHostCheck: true, // To develop from AWS
     port: 9000,
   },
   devtool: 'eval-source-map',

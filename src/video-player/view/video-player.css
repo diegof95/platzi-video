@@ -1,0 +1,8 @@
+
+.VideoPlayer {
+    width: inherit;
+}
+
+.VideoPlayer video {
+    width: inherit;
+}
