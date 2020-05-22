@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import VideoPlayerLayout from '../view/video-player-layout';
+import Video from '../view/video';
 import PlayPause from '../view/play-pause';
 
 class VideoPlayer extends Component {
@@ -28,10 +29,10 @@ class VideoPlayer extends Component {
           handleClick={this.toggleReproduction}
           paused={this.state.paused}
         />
-        <video
-          controls
-          autoPlay={this.props.autoplay}
+        <Video
+          autoplay={this.props.autoplay}
           src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+          paused={this.state.paused}
         />
       </VideoPlayerLayout>
     )
