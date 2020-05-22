@@ -34,7 +34,7 @@ class Home extends Component {
             this.state.modalOn && // Evaluación cortocircuito
             <Modal>
               <ModalLayout handleClose={this.handleCloseModal}>
-                <VideoPlayer />
+                <VideoPlayer autoplay={true}/>
               </ModalLayout>
             </Modal>
           }
