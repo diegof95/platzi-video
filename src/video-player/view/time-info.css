@@ -1,0 +1,10 @@
+.TimeInfo {
+  font-size: 14px;
+  color: red;
+  padding: 0 10px 0 0;
+  height: 50px;
+}
+
+.TimeInfo p {
+  margin: 0;
+}
