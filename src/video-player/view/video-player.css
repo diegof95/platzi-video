@@ -5,4 +5,5 @@
 
 .VideoPlayer video {
     width: inherit;
+    max-height: 480px; /* Para acomodar nuevo vídeo de prueba*/
 }

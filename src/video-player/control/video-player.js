@@ -8,6 +8,7 @@ class VideoPlayer extends Component {
   
   state = {
     paused: true,
+    currentTime: 0,
     duration: 0,
   }
   
@@ -19,10 +20,15 @@ class VideoPlayer extends Component {
   }
   
   handleLoadedMetadata = (event) => {
-    const video = event.target;
-    console.log(video.duration)
+    this.video = event.target;
     this.setState(
-      {duration: video.duration}
+      {duration: this.video.duration}
+    )
+  }
+  
+  handleTimeupdate = (event) => {
+    this.setState(
+      {currentTime: this.video.currentTime}
     )
   }
   
@@ -42,11 +48,13 @@ class VideoPlayer extends Component {
         />
         <Video
           autoplay={this.props.autoplay}
-          src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+          src="https://dev-files-provider.s3.us-east-2.amazonaws.com/wolves_hauling.mp4"
           paused={this.state.paused}
           handleLoadedMetadata={this.handleLoadedMetadata}
+          handleTimeupdate={this.handleTimeupdate}
+          toggleReproduction={this.toggleReproduction}
         />
-        <TimeInfo duration={this.state.duration}/>
+        <TimeInfo current={this.state.currentTime} duration={this.state.duration}/>
       </VideoPlayerLayout>
     )
   }
