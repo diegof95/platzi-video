@@ -19,7 +19,8 @@ class Video extends Component {
     
     const {
       autoplay, src, handleLoadedMetadata,
-      handleTimeupdate, toggleReproduction
+      handleTimeUpdate, toggleReproduction,
+      handleTimeSeeking
     } = this.props;
     
     return(
@@ -27,9 +28,11 @@ class Video extends Component {
         autoPlay={autoplay}
         src={src}
         onLoadedMetadata={handleLoadedMetadata}
-        onTimeUpdate={handleTimeupdate}
+        onTimeUpdate={handleTimeUpdate}
         onPlaying={console.log("playing")}
         onPause={console.log("pause")}
+        onSeeking={handleTimeSeeking}
+        onSeeked={handleTimeSeeking}
         ref={(element) => this.video = element}
       />
     );

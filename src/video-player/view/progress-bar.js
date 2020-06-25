@@ -7,7 +7,9 @@ const ProgressBar = (props) => (
       type="range"
       min={0}
       max={props.total}
+      step={0.5}
       value={props.actual}
+      onChange={props.handleProgressChange}
     />
   </div>
 );
