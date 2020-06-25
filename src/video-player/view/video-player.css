@@ -1,9 +1,10 @@
 
 .VideoPlayer {
-    width: inherit;
+  width: inherit;
+  background-color: #181818;
 }
 
 .VideoPlayer video {
-    width: inherit;
-    max-height: 480px; /* Para acomodar nuevo vídeo de prueba*/
+  width: inherit;
+  max-height: 480px; /* Para acomodar nuevo vídeo de prueba*/
 }

@@ -9,7 +9,7 @@ class Video extends Component {
       this.video.pause();
   }
   
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if(this.props.paused != nextProps.paused){
       this.togglePlay();
     }
@@ -24,7 +24,6 @@ class Video extends Component {
     
     return(
       <video
-        controls    
         autoPlay={autoplay}
         src={src}
         onLoadedMetadata={handleLoadedMetadata}

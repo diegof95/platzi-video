@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import VideoPlayerLayout from '../view/video-player-layout';
 import Video from '../view/video';
+import VideoControls from '../view/video-controls';
+import ProgressBar from '../view/progress-bar';
 import PlayPause from '../view/play-pause';
 import TimeInfo from '../view/time-info';
 
@@ -54,7 +56,10 @@ class VideoPlayer extends Component {
           handleTimeupdate={this.handleTimeupdate}
           toggleReproduction={this.toggleReproduction}
         />
-        <TimeInfo current={this.state.currentTime} duration={this.state.duration}/>
+        <VideoControls>
+          <TimeInfo current={this.state.currentTime} duration={this.state.duration}/>
+          <ProgressBar actual={this.state.currentTime} total={this.state.duration}/>
+        </VideoControls>
       </VideoPlayerLayout>
     )
   }

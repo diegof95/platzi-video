@@ -1,0 +1,7 @@
+.ProgressBar{
+  flex-grow: 1;
+}
+
+.ProgressBar input {
+  width: 100%;
+}
