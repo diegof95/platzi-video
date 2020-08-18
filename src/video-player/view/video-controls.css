@@ -1,5 +1,12 @@
 .VideoControls {
-  width: 100%;
+  width: auto;
   display: flex;
-  padding: 5px 10px 5px;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  right: 10px;
+  padding: 0 10px;
+  background: rgba(0,0,0,.7);
+  border-radius: 20px;
 }

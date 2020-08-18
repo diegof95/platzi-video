@@ -12,12 +12,12 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOn: false
+      modalOn: false,
     };
   }
 
-  handleClickMedia = () => {
-    this.setState({modalOn: true});
+  handleClickMedia = (mediaInfo) => {
+    this.setState({modalOn: true, mediaInfo});
   }
 
   handleCloseModal = () => {
@@ -34,7 +34,7 @@ class Home extends Component {
             this.state.modalOn && // Evaluación cortocircuito
             <Modal>
               <ModalLayout handleClose={this.handleCloseModal}>
-                <VideoPlayer autoplay={true}/>
+                <VideoPlayer autoplay={true} title={this.state.mediaInfo.title}/>
               </ModalLayout>
             </Modal>
           }

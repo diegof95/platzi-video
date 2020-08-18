@@ -1,8 +1,5 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
-const webpack = require('webpack');
+const HtmlWebpackPlugin  = require('html-webpack-plugin')
 
 
 module.exports = {
@@ -19,10 +16,15 @@ module.exports = {
   //   // contentBase: path.join(__dirname, "dist"),
   //   // compress: true,
     host: '0.0.0.0',
-    disableHostCheck: true, // To develop from AWS
+    disableHostCheck: true, // To develop from cloud
     port: 9000,
   },
   devtool: 'eval-source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ],
   module: {
     rules: [
       {
@@ -35,7 +37,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'react', 'stage-2'],
+            presets: ['@babel/env', '@babel/react',
+              {'plugins': ['@babel/plugin-proposal-class-properties']}]
           }
         }
       },

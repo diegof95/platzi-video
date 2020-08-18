@@ -5,9 +5,17 @@ import './media.css';
 
 class Media extends Component {
 
+  handleClick = (event) => {
+    this.props.handleClickMedia(
+      {
+        title: this.props.title
+      }
+    )
+  }
+
   render(){
     return( //JSX
-        <div className="Media" onClick={this.props.handleClick}>
+        <div className="Media" onClick={this.handleClick}>
           <div className="Media-cover">
             <img className="Media-image" src={this.props.cover}
               alt={this.props.title}

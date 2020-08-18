@@ -23,7 +23,7 @@ function Playlist(props) {
                 <Media
                   {...item}
                   key={item.id}
-                  handleClick={props.handleClickMedia}
+                  handleClickMedia={props.handleClickMedia}
                 />
               )
             }

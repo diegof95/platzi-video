@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import VideoPlayerLayout from '../view/video-player-layout';
 import Video from '../view/video';
+import Title from '../view/title';
 import VideoControls from '../view/video-controls';
 import ProgressBar from '../view/progress-bar';
 import PlayPause from '../view/play-pause';
@@ -10,7 +11,7 @@ import Spinner from '../view/spinner';
 class VideoPlayer extends Component {
   
   state = {
-    paused: true,
+    paused: false,
     loading: false,
     currentTime: 0,
     duration: 0,
@@ -18,7 +19,7 @@ class VideoPlayer extends Component {
   
   toggleReproduction = (event) => {
     this.setState((prevState) => (
-        {paused: !prevState.paused,}
+        {paused: !prevState.paused}
       )
     )
   }
@@ -44,9 +45,15 @@ class VideoPlayer extends Component {
   }
   
   handleTimeSeeking = (event) => {
-    this.setState((prevState) => (
-        {loading: !prevState.loading}
-      )
+    this.setState(
+        {loading: true}
+      
+    )
+  }
+  handleTimeSeeked = (event) => {
+    this.setState(
+        {loading: false}
+      
     )
   }
   
@@ -59,14 +66,7 @@ class VideoPlayer extends Component {
   render() {
     return (
       <VideoPlayerLayout>
-        
-        <PlayPause
-          handleClick={this.toggleReproduction}
-          paused={this.state.paused}
-        />
-        { this.state.loading &&
-        <Spinner active={this.state.loading}/>
-        }
+        <Title title={this.props.title}/>
         <Video
           autoplay={this.props.autoplay}
           src="https://dev-files-provider.s3.us-east-2.amazonaws.com/wolves_hauling.mp4"
@@ -74,10 +74,21 @@ class VideoPlayer extends Component {
           handleLoadedMetadata={this.handleLoadedMetadata}
           handleTimeUpdate={this.handleTimeUpdate}
           handleTimeSeeking={this.handleTimeSeeking}
+          handleTimeSeeked={this.handleTimeSeeked}
           toggleReproduction={this.toggleReproduction}
         />
+        {this.state.loading &&
+          <Spinner active={this.state.loading} />
+        }
         <VideoControls>
-          <TimeInfo current={this.state.currentTime} duration={this.state.duration}/>
+          <PlayPause
+            handleClick={this.toggleReproduction}
+            paused={this.state.paused}
+          />
+          <TimeInfo
+            current={this.state.currentTime}
+            duration={this.state.duration}
+          />
           <ProgressBar
             actual={this.state.currentTime}
             total={this.state.duration}

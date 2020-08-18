@@ -7,7 +7,7 @@
 .PlayPause button {
   height: inherit;
   border: none;
-  background: blue;
+  background: black;
   outline: 0;
   width: inherit;
   cursor: pointer;

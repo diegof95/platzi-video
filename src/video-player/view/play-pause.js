@@ -8,12 +8,12 @@ const PlayPause = (props) => (
     <button onClick={props.handleClick}>
       { props.paused ?
           <Play
-            size={35}
+            size={25}
             color='white'
           />
         :
           <Pause
-            size={35}
+            size={25}
             color='white'
           />
       }
