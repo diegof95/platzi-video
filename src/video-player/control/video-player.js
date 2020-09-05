@@ -7,6 +7,7 @@ import ProgressBar from '../view/progress-bar';
 import PlayPause from '../view/play-pause';
 import TimeInfo from '../view/time-info';
 import Spinner from '../view/spinner';
+import VolumeControl from '../view/volume';
 
 class VideoPlayer extends Component {
   
@@ -15,20 +16,22 @@ class VideoPlayer extends Component {
     loading: false,
     currentTime: 0,
     duration: 0,
+    currentVolume: 1,
+    muted: false
   }
   
   toggleReproduction = (event) => {
     this.setState((prevState) => (
         {paused: !prevState.paused}
       )
-    )
+    );
   }
   
   handleLoadedMetadata = (event) => {
     this.video = event.target;
     this.setState(
       {duration: this.video.duration}
-    )
+    );
   }
   
   handleTimeUpdate = (event) => {
@@ -41,22 +44,37 @@ class VideoPlayer extends Component {
     this.video.currentTime = event.target.value;
     this.setState(
       {currentTime: this.video.currentTime}
-    )
+    );
   }
   
   handleTimeSeeking = (event) => {
     this.setState(
-        {loading: true}
-      
-    )
+      {loading: true}
+    );
   }
   handleTimeSeeked = (event) => {
     this.setState(
-        {loading: false}
-      
-    )
+      {loading: false}
+    );
   }
   
+  handleVolumeChange = (event) => {
+    this.video.volume = event.target.value;
+    this.setState(
+      {currentVolume: this.video.volume}
+    );
+  }
+
+  handleMute = (event) => {
+    if(this.state.muted){
+      this.video.volume = this.state.currentVolume;
+      this.setState({muted: false});
+    }else{
+      this.video.volume = 0;
+      this.setState({muted: true});
+    }
+  }
+
   componentDidMount() {
     if(this.props.autoplay) {
       this.setState({ paused: false})
@@ -93,6 +111,10 @@ class VideoPlayer extends Component {
             actual={this.state.currentTime}
             total={this.state.duration}
             handleProgressChange={this.handleProgressChange}
+          />
+          <VolumeControl
+            handleVolumeChange={this.handleVolumeChange}
+            handleMute={this.handleMute}
           />
         </VideoControls>
       </VideoPlayerLayout>

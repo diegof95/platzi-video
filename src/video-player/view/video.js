@@ -33,11 +33,9 @@ class Video extends Component {
         src={src}
         onLoadedMetadata={handleLoadedMetadata}
         onTimeUpdate={handleTimeUpdate}
-        onPlaying={console.log("playing")}
-        onPause={console.log("pause")}
         onSeeking={handleTimeSeeking}
         onSeeked={handleTimeSeeked}
-        ref={(element) => this.video = element}
+        ref={(element) => (this.video = element)}
       />
     );
   }
