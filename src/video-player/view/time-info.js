@@ -6,7 +6,7 @@ const timeFormater = (time) => {
   let timeStr = time.toString();
   
   if(timeStr.length == 1) {
-    console.log('0'+timeStr)
+    //console.log('0'+timeStr)
     return ('0' + timeStr);
   }else {
     return timeStr;

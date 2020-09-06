@@ -8,6 +8,7 @@ import PlayPause from '../view/play-pause';
 import TimeInfo from '../view/time-info';
 import Spinner from '../view/spinner';
 import VolumeControl from '../view/volume';
+import FullScreen from '../view/full-screen';
 
 class VideoPlayer extends Component {
   
@@ -75,6 +76,14 @@ class VideoPlayer extends Component {
     }
   }
 
+  handleFullScreen = (event) => {
+    if(!document.fullscreenElement){
+      this.player.requestFullscreen();
+    }else{
+      document.exitFullscreen();
+    }
+  }
+
   componentDidMount() {
     if(this.props.autoplay) {
       this.setState({ paused: false})
@@ -83,7 +92,9 @@ class VideoPlayer extends Component {
   
   render() {
     return (
-      <VideoPlayerLayout>
+      <VideoPlayerLayout
+        setRef={(element) => (this.player = element)}
+      >
         <Title title={this.props.title}/>
         <Video
           autoplay={this.props.autoplay}
@@ -115,6 +126,9 @@ class VideoPlayer extends Component {
           <VolumeControl
             handleVolumeChange={this.handleVolumeChange}
             handleMute={this.handleMute}
+          />
+          <FullScreen
+            handleFullScreen={this.handleFullScreen}
           />
         </VideoControls>
       </VideoPlayerLayout>
